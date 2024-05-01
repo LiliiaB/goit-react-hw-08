@@ -1,23 +1,24 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Layout } from "./Layout/Layout";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect, lazy } from "react";
-import { refreshUser } from "redux/auth/operations";
-import { PublicRoute } from "./PublicRoute";
-import { PrivatRoute } from "./PrivateRoute";
+import { PublicRoute } from "../PrivateRoute";
+import { PrivateRoute } from "../PrivateRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getIsRefreshing } from "redux/auth/selectors";
+import { refreshUser } from "../../redux/auth/operations";
+import { Layout } from "../Layout/Layout";
 
-const Home = lazy(() => import("Pages/Home/Home"));
+const Home = lazy(() => import("../../Pages/Home/Home"));
 const ContactDetails = lazy(() =>
-  import("Pages/ContactDetails/ContactDetails")
+  import("../../Pages/ContactDetails/ContactDetails")
 );
-const ContactsPage = lazy(() => import("Pages/ContactsPage/ContactsPage"));
+const ContactsPage = lazy(() =>
+  import("../../Pages/ContactsPage/ContactsPage")
+);
 const RegistrationPage = lazy(() =>
-  import("Pages/RegistrationPage/RegistrationPage")
+  import("../../Pages/RegistrationPage/RegistrationPage")
 );
-const LogInPage = lazy(() => import("Pages/LoginPage/LogInPage"));
+const LogInPage = lazy(() => import("../../Pages/LoginPage/LoginPage"));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -56,13 +57,13 @@ export const App = () => {
           <Route
             path="/contacts"
             element={
-              <PrivatRoute redirectTo="/login" component={<ContactsPage />} />
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
             }
           >
             <Route
               path=":id"
               element={
-                <PrivatRoute
+                <PrivateRoute
                   redirectTo="/login"
                   component={<ContactDetails />}
                 />
