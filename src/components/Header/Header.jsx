@@ -1,8 +1,8 @@
-import { AuthNav } from "components/AuthNav/AuthNav";
-import { Navigation } from "components/Navigaion/Navigation";
-import { UserMenu } from "components/UserMenu/UserMenu";
 import { useSelector } from "react-redux";
-import { getIsLoggedIn, getIsRefreshing } from "redux/auth/selectors";
+import { getIsLoggedIn, getIsRefreshing } from "../../redux/auth/selectors";
+import { AuthNav } from "../AuthNav/AuthNav";
+import { UserMenu } from "../UserMenu/UserMenu";
+import { Navigation } from "../Navigation/Navigation";
 
 export const Header = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);

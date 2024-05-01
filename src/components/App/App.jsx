@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect, lazy } from "react";
-import { PublicRoute } from "../PrivateRoute";
+import { PublicRoute } from "../PublicRoute";
 import { PrivateRoute } from "../PrivateRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
