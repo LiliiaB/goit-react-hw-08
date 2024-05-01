@@ -1,12 +1,5 @@
-import { Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as yup from "yup";
-import {
-  Button,
-  FormStyled,
-  Label,
-  FieldStyled,
-  ErrorMessageStyled,
-} from "./ContactForm.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import { getContacts } from "redux/contacts/selectors";
@@ -20,14 +13,14 @@ const schema = yup.object().shape({
     .required("Name is required")
     .matches(
       "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$",
-      "Error! Name may contain only letters, apostrophe, dash and spaces."
+      "Name must contain letters"
     ),
   number: yup
     .string()
     .required("Phone number is required")
     .matches(
       "\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}",
-      "Error! Phone number must be digits and can contain spaces, dashes, parentheses and can start with +."
+      "Phone number must contain digits"
     ),
 });
 
@@ -47,7 +40,7 @@ export const ContactForm = ({ closeModal }) => {
       .some((el) => el === newName);
 
     if (nameExist) {
-      toast.error("A contact with that name already exists.");
+      toast.error("This name already exists");
     }
 
     dispatch(addContact(values));
@@ -61,19 +54,19 @@ export const ContactForm = ({ closeModal }) => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <FormStyled>
-        <Label>
+      <Form>
+        <label>
           Name
-          <FieldStyled type="text" name="name" />
-          <ErrorMessageStyled name="name" component="span" />
-        </Label>
-        <Label>
+          <Field type="text" name="name" />
+          <ErrorMessage name="name" component="span" />
+        </label>
+        <labelabel>
           Phone number
-          <FieldStyled type="tel" name="number" />
-          <ErrorMessageStyled name="number" component="span" />
-        </Label>
-        <Button type="submit">Add contact</Button>
-      </FormStyled>
+          <Field type="tel" name="number" />
+          <ErrorMessage name="number" component="span" />
+        </labelabel>
+        <button type="submit">Add contact</button>
+      </Form>
     </Formik>
   );
 };

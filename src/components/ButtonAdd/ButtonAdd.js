@@ -1,10 +1,10 @@
-import { AddIcon, ButtonAddStyled } from "./ButtonAdd.styled";
+import { BsFillPersonPlusFill } from "react-icons/bs";
 
 export const ButtonAdd = ({ openModal }) => {
   return (
-    <ButtonAddStyled onClick={() => openModal(true)}>
-      <AddIcon />
+    <button onClick={() => openModal(true)}>
+      <BsFillPersonPlusFill />
       Add new contact
-    </ButtonAddStyled>
+    </button>
   );
 };

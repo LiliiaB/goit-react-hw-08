@@ -10,11 +10,11 @@ export const Header = () => {
 
   return (
     <>
-      <Header>
+      <h1>
         <Navigation />
         {isLoggedIn && !isRefreshing && <UserMenu />}
         {!isLoggedIn && !isRefreshing && <AuthNav />}
-      </Header>
+      </h1>
     </>
   );
 };

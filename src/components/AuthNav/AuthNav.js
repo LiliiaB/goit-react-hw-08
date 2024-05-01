@@ -1,10 +1,10 @@
-import { AddIcon, ButtonAddStyled } from "./ButtonAdd.styled";
+import { NavLink } from "react-router-dom";
 
-export const ButtonAdd = ({ openModal }) => {
+export const AuthNav = () => {
   return (
-    <ButtonAddStyled onClick={() => openModal(true)}>
-      <AddIcon />
-      Add new contact
-    </ButtonAddStyled>
+    <div>
+      <NavLink to="/login">Log in</NavLink>
+      <NavLink to="/register">Sign up</NavLink>
+    </div>
   );
 };

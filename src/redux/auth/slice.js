@@ -20,7 +20,7 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isAuthLoading = false;
-      toast.success("You have successfully registered!");
+      toast.success("Registration success");
     },
     [register.pending](state, action) {
       state.isAuthLoading = true;
@@ -35,7 +35,7 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isAuthLoading = false;
-      toast.success("Login successfull!");
+      toast.success("Login successfull");
     },
     [logIn.pending](state, action) {
       state.isAuthLoading = true;
@@ -43,14 +43,14 @@ const authSlice = createSlice({
     [logIn.rejected](state, action) {
       state.isAuthLoading = false;
       state.error = action.payload;
-      toast.error("Error! Check your data!");
+      toast.error("Login error");
     },
     [logOut.fulfilled](state) {
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
       state.isAuthLoading = false;
-      toast.success("You have successfully log out!");
+      toast.success("You have successfully logged out!");
     },
     [logOut.pending](state, action) {
       state.isAuthLoading = true;
@@ -58,7 +58,7 @@ const authSlice = createSlice({
     [logOut.rejected](state, action) {
       state.isAuthLoading = false;
       state.error = action.payload;
-      toast.error("Error!");
+      toast.error("Some error");
     },
     [refreshUser.pending](state) {
       state.isRefreshing = true;

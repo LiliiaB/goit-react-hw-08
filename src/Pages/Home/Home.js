@@ -1,10 +1,8 @@
-import { HomeContainer, Header } from "./Home.styled";
-
 const Home = () => {
   return (
-    <HomeContainer>
-      <Header>Welcome to PhoneBook</Header>
-    </HomeContainer>
+    <>
+      <h1>Welcome to PhoneBook</h1>
+    </>
   );
 };
 

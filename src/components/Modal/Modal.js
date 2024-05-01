@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Header, ModalStyled, Overlay } from "./Modal.styled";
 import { ContactForm } from "components/ContactForm/ContactForm";
 
 const modalRoot = document.querySelector("#modal-root");
@@ -27,12 +26,12 @@ export const Modal = ({ closeModal }) => {
   });
 
   return createPortal(
-    <Overlay onClick={closeByClickOnBackdrop}>
-      <ModalStyled>
-        <Header>Fill the details of the new contact</Header>
+    <div className={css.backdrop} onClick={closeByClickOnBackdrop}>
+      <div className={css.modal}>
+        <h2 className={css.h2}>Fill the details of the new contact</h2>
         <ContactForm closeModal={closeModal} />
-      </ModalStyled>
-    </Overlay>,
+      </div>
+    </div>,
     modalRoot
   );
 };

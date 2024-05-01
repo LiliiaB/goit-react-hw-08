@@ -25,7 +25,7 @@ export const addContact = createAsyncThunk(
         name: contact.name,
         number: contact.number,
       });
-      toast.success("New contact added!");
+      toast.success("New contact added");
       return response.data;
     } catch (e) {
       toast.error(e.message);
@@ -39,7 +39,7 @@ export const deleteContact = createAsyncThunk(
   async (contactId, thunkAPI) => {
     try {
       const response = await axios.delete(`/contacts/${contactId}`);
-      toast.success("Contact deleted!");
+      toast.success("Contact deleted");
       return response.data;
     } catch (e) {
       toast.error(e.message);
