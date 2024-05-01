@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { register } from "redux/auth/operations";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { register } from "../../redux/auth/operations";
 
 const initialValues = {
   name: "",
