@@ -28,14 +28,14 @@ const authSlice = createSlice({
     [register.rejected](state, action) {
       state.isAuthLoading = false;
       state.error = action.payload;
-      toast.error("Error! Check your data!");
+      toast.error("Some error");
     },
     [logIn.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.isAuthLoading = false;
-      toast.success("You have successfully log in!");
+      toast.success("Login successfull!");
     },
     [logIn.pending](state, action) {
       state.isAuthLoading = true;
