@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { setFilter } from "../../redux/contacts/contactsSlice";
+import css from "./Filter.module.css";
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -10,9 +11,14 @@ export const Filter = () => {
 
   return (
     <>
-      <label>
+      <label className={css.label}>
         Find contact by name
-        <input name="filter" type="text" onChange={saveFilterValue}></input>
+        <input
+          className={css.input}
+          name="filter"
+          type="text"
+          onChange={saveFilterValue}
+        ></input>
       </label>
     </>
   );

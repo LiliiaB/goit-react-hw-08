@@ -3,6 +3,7 @@ import { getIsLoggedIn, getIsRefreshing } from "../../redux/auth/selectors";
 import { AuthNav } from "../AuthNav/AuthNav";
 import { UserMenu } from "../UserMenu/UserMenu";
 import { Navigation } from "../Navigation/Navigation";
+import css from "./Header.module.css";
 
 export const Header = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
@@ -10,11 +11,11 @@ export const Header = () => {
 
   return (
     <>
-      <h1>
+      <div className={css.div}>
         <Navigation />
         {isLoggedIn && !isRefreshing && <UserMenu />}
         {!isLoggedIn && !isRefreshing && <AuthNav />}
-      </h1>
+      </div>
     </>
   );
 };

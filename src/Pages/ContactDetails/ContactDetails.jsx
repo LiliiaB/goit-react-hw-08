@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getContacts, getError, getIsLoading } from "redux/contacts/selectors";
 import { FallingLines } from "react-loader-spinner";
+import css from "./ContactDetails.module.css";
 
 const ContactDetails = () => {
   const { id } = useParams();
@@ -12,7 +13,7 @@ const ContactDetails = () => {
   const error = useSelector(getError);
 
   return (
-    <>
+    <div className={css.div}>
       {isLoading && !error && (
         <FallingLines
           color="#0824AF"
@@ -23,7 +24,7 @@ const ContactDetails = () => {
       )}
       <p>Name: {contact.name}</p>
       <p>Phone: {contact.number}</p>
-    </>
+    </div>
   );
 };
 

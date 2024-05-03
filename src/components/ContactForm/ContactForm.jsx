@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import { getContacts } from "redux/contacts/selectors";
 import { toast } from "react-toastify";
+import css from "./ContactForm.module.css";
 
 const schema = yup.object().shape({
   name: yup
@@ -54,18 +55,20 @@ export const ContactForm = ({ closeModal }) => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <Form>
-        <label>
-          Name
-          <Field type="text" name="name" />
-          <ErrorMessage name="name" component="span" />
+      <Form className={css.form}>
+        <label className={css.label}>
+          NAME
+          <Field className={css.field} type="text" name="name" />
+          <ErrorMessage className={css.error} name="name" component="span" />
         </label>
-        <labelabel>
-          Phone number
-          <Field type="tel" name="number" />
-          <ErrorMessage name="number" component="span" />
-        </labelabel>
-        <button type="submit">Add contact</button>
+        <label className={css.label}>
+          PHONE NUMBER
+          <Field className={css.field} type="tel" name="number" />
+          <ErrorMessage className={css.error} name="number" component="span" />
+        </label>
+        <button className={css.button} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );

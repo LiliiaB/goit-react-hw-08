@@ -1,8 +1,10 @@
+import css from "./Home.module.css";
+
 const Home = () => {
   return (
-    <>
-      <h1>Welcome to PhoneBook</h1>
-    </>
+    <div className={css.div}>
+      <h1 className={css.h1}>Home</h1>
+    </div>
   );
 };
 

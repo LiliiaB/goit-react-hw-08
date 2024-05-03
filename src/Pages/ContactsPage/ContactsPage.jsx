@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { getError, getIsLoading } from "redux/contacts/selectors";
 import { FallingLines } from "react-loader-spinner";
+import css from "./ContactsPage.module.css";
 
 const ContactsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,7 +15,7 @@ const ContactsPage = () => {
   const error = useSelector(getError);
 
   return (
-    <>
+    <div className={css.div}>
       <ButtonAdd openModal={setIsModalOpen} />
       <Filter />
       {isLoading && !error && (
@@ -28,7 +29,7 @@ const ContactsPage = () => {
       <ContactList />
       <Outlet />
       {isModalOpen && <Modal closeModal={setIsModalOpen} />}
-    </>
+    </div>
   );
 };
 

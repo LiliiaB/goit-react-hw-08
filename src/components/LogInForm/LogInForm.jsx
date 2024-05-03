@@ -1,6 +1,7 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
+import css from "./LogInForm.module.css";
 
 const initialValues = {
   email: "",
@@ -20,22 +21,28 @@ export const LoginForm = () => {
   };
 
   return (
-    <>
+    <div className={css.div}>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
-          <label>
-            Email
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="span" />
+        <Form className={css.form}>
+          <label className={css.label}>
+            EMAIL
+            <Field className={css.field} type="email" name="email" />
+            <ErrorMessage className={css.error} name="email" component="span" />
           </label>
-          <label>
-            Password
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="span" />
+          <label className={css.label}>
+            PASSWORD
+            <Field className={css.field} type="password" name="password" />
+            <ErrorMessage
+              className={css.error}
+              name="password"
+              component="span"
+            />
           </label>
-          <button type="submit">Log in</button>
+          <button className={css.button} type="submit">
+            LOG IN
+          </button>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };
