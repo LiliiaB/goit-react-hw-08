@@ -67,7 +67,7 @@ export const ContactForm = ({ closeModal }) => {
           <ErrorMessage className={css.error} name="number" component="span" />
         </label>
         <button className={css.button} type="submit">
-          Add contact
+          ADD CONTACT
         </button>
       </Form>
     </Formik>

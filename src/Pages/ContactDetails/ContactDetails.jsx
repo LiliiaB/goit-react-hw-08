@@ -22,8 +22,8 @@ const ContactDetails = () => {
           ariaLabel="falling-lines-loading"
         />
       )}
-      <p>Name: {contact.name}</p>
-      <p>Phone: {contact.number}</p>
+      <p>NAME: {contact.name}</p>
+      <p>PHONE: {contact.number}</p>
     </div>
   );
 };

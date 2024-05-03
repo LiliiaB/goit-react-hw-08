@@ -5,7 +5,7 @@ export const ButtonAdd = ({ openModal }) => {
   return (
     <button className={css.button} onClick={() => openModal(true)}>
       <BsFillPersonPlusFill className={css.icon} />
-      Add new contact
+      ADD NEW CONTACT
     </button>
   );
 };

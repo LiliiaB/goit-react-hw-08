@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { register } from "../../redux/auth/operations";
+import css from "./RegistrationForm.module.css";
 
 const initialValues = {
   name: "",
@@ -23,27 +24,33 @@ export const RegistrationForm = () => {
   };
 
   return (
-    <>
+    <div className={css.div}>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
-          <label>
-            Name
-            <Field type="text" name="name" />
-            <ErrorMessage name="name" component="span" />
+        <Form className={css.form}>
+          <label className={css.label}>
+            NAME
+            <Field className={css.field} type="text" name="name" />
+            <ErrorMessage className={css.error} name="name" component="span" />
           </label>
-          <label>
-            Email
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="span" />
+          <label className={css.label}>
+            EMAIL
+            <Field className={css.field} type="email" name="email" />
+            <ErrorMessage className={css.error} name="email" component="span" />
           </label>
-          <label>
-            Password
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="span" />
+          <label className={css.label}>
+            PASSWORD
+            <Field className={css.field} type="password" name="password" />
+            <ErrorMessage
+              className={css.error}
+              name="password"
+              component="span"
+            />
           </label>
-          <button type="submit">Sign up</button>
+          <button className={css.button} type="submit">
+            SIGN UP
+          </button>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };
