@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { fetchContacts } from "redux/contacts/operations";
-import { deleteContact } from "../../redux/contacts/operations";
-import { getFilteredContacts } from "redux/contacts/selectors";
+import { deleteContact, fetchContacts } from "../../redux/contacts/operations";
+
 import { NavLink } from "react-router-dom";
 import css from "./ContactList.module.css";
+import { getFilteredContacts } from "../../redux/contacts/selectors";
 
 export const ContactList = () => {
   const dispatch = useDispatch();

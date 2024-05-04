@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { ContactForm } from "components/ContactForm/ContactForm";
+import { ContactForm } from "../../components/ContactForm/ContactForm";
 import css from "./Modal.module.css";
 
 const modalRoot = document.querySelector("#modal-root");
