@@ -1,8 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getContacts, getError, getIsLoading } from "redux/contacts/selectors";
+
 import { FallingLines } from "react-loader-spinner";
 import css from "./ContactDetails.module.css";
+import {
+  getContacts,
+  getError,
+  getIsLoading,
+} from "../../redux/contacts/selectors";
 
 const ContactDetails = () => {
   const { id } = useParams();
