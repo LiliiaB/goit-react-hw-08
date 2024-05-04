@@ -29,7 +29,7 @@ export const Modal = ({ closeModal }) => {
   return createPortal(
     <div className={css.backdrop} onClick={closeByClickOnBackdrop}>
       <div className={css.modal}>
-        <h2 className={css.h2}>Fill the details of the new contact</h2>
+        <h3 className={css.h3}>ADD NEW CONTACT</h3>
         <ContactForm closeModal={closeModal} />
       </div>
     </div>,
