@@ -12,22 +12,16 @@
 }
 
 .modal {
-  color: #0a0d68;
+  color: #232327;
   max-width: calc(100vw - 48px);
   min-width: 500px;
   max-height: calc(100vh - 24px);
   padding: 40px 30px;
   border-radius: 4px;
-
+  background-color: #fff;
   border: none;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  background: linear-gradient(
-    90deg,
-    rgba(32, 142, 221, 1) 9%,
-    rgba(88, 192, 243, 1) 37%,
-    rgba(53, 173, 233, 1) 79%
-  );
 }
 .h2 {
   text-align: center;
