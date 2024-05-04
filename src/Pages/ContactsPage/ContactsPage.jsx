@@ -16,7 +16,6 @@ const ContactsPage = () => {
 
   return (
     <div className={css.div}>
-      <ButtonAdd openModal={setIsModalOpen} />
       <Filter />
       {isLoading && !error && (
         <FallingLines
@@ -29,6 +28,7 @@ const ContactsPage = () => {
       <ContactList />
       <Outlet />
       {isModalOpen && <Modal closeModal={setIsModalOpen} />}
+      <ButtonAdd openModal={setIsModalOpen} />
     </div>
   );
 };

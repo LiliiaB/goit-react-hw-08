@@ -3,13 +3,5 @@
   font-weight: 700;
   text-decoration: none;
   color: #232327;
-
-  &:not(:last-child) {
-    margin-right: 40px;
-  }
-
-  &.active {
-    color: #fff;
-    text-decoration: underline;
-  }
+  margin-right: 40px;
 }
