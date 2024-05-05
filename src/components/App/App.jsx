@@ -8,17 +8,17 @@ import "react-toastify/dist/ReactToastify.css";
 import { refreshUser } from "../../redux/auth/operations";
 import { Layout } from "../Layout/Layout";
 
-const Home = lazy(() => import("../../Pages/Home/Home"));
+const Home = lazy(() => import("../../pages/Home/Home"));
 const ContactDetails = lazy(() =>
-  import("../../Pages/ContactDetails/ContactDetails")
+  import("../../pages/ContactDetails/ContactDetails")
 );
 const ContactsPage = lazy(() =>
-  import("../../Pages/ContactsPage/ContactsPage")
+  import("../../pages/ContactsPage/ContactsPage")
 );
 const RegistrationPage = lazy(() =>
-  import("../../Pages/RegistrationPage/RegistrationPage")
+  import("../../pages/RegistrationPage/RegistrationPage")
 );
-const LogInPage = lazy(() => import("../../Pages/LoginPage/LoginPage"));
+const LogInPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
 
 export const App = () => {
   const dispatch = useDispatch();
