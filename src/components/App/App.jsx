@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, lazy } from "react";
 import { PublicRoute } from "../PublicRoute";
 import { PrivateRoute } from "../PrivateRoute";
@@ -22,10 +22,15 @@ const LogInPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector((state) => state.auth.isRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
+
+  if (isRefreshing) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div
